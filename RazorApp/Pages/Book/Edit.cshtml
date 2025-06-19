@@ -1,0 +1,26 @@
+@page "{id:int}"
+@model RazorApp.Pages.Book.Edit
+
+<form method="post">
+    <input type="hidden" asp-for="Book.Id">
+    <div class="mb-3">
+        <label for="Book title" class="form-label">Book title</label>
+        <input asp-for="Book.Title" type="text" class="form-control" id="Book title" placeholder="Title">
+    </div>
+    <div class="mb-3">
+        <label for="Author" class="form-label">Author</label>
+        <input asp-for="Book.Author" type="text" class="form-control" id="Author" placeholder="Author">
+    </div>
+    <div class="mb-3">
+        <label for="Genre" class="form-label">Genre</label>
+        <input asp-for="Book.Genre" type="text" class="form-control" id="Genre" placeholder="Genre">
+    </div>
+    <div class="mb-3">
+        <label for="PublishedDate" class="form-label">Published date</label>
+        <input asp-for="Book.PublishedDate" type="date" class="form-control" id="PublishedDate" placeholder="Published Date">
+    </div>
+    <div class="d-flex gap-3">
+        <button type="submit" class="btn btn-warning mb-3">Edit</button>
+        <a asp-page="/Book/index" class="btn btn-danger mb-3">Back</a>
+    </div>
+</form>

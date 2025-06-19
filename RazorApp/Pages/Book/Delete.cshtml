@@ -1,0 +1,12 @@
+@page "{id:int}"
+@model RazorApp.Pages.Book.Delete
+
+<H1>Are you sure to delete this book?</H1>
+
+<form method="post">
+    <input type="hidden" asp-for="Id">
+    <div class="d-flex gap-3">
+        <button type="submit" class="btn btn-danger mb-3">Yes</button>
+        <a asp-page="/Book/index" class="btn btn-primary mb-3">Go back</a>
+    </div>
+</form>

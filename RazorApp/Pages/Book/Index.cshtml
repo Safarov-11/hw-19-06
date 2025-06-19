@@ -1,0 +1,29 @@
+@page
+@model RazorApp.Pages.Book.Index
+
+@{
+    var cnt1 = 1;
+}
+
+@foreach (var bk in Model.Books)
+{
+
+    <div class="row" style="width: 100%; margin-left: 20% ; margin-top: 25px;">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">@(cnt1++)</p>
+                    <h5 class="card-title">@bk.Title</h5>
+                    <p class="card-text">@bk.Author</p>
+                    <p class="card-text">@bk.Genre</p>
+                    <p class="card-text">@bk.PublishedDate</p>
+                    <div>
+                        <a asp-page="/Book/create" class="btn btn-warning">Add</a>
+                        <a asp-page="/Book/Edit" asp-route-id="@bk.Id" class="btn btn-warning" >Edit</a>
+                        <a asp-page="/Book/Delete" asp-route-id="@bk.Id" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
